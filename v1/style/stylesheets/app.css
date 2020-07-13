@@ -1,0 +1,47 @@
+body {
+  background-image: url(https://images.unsplash.com/photo-1505985518385-c4e867fcaf82?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+  background-attachment: fixed;
+} 
+h2{
+  text-align: center;
+}
+
+h6 {
+  margin-bottom: 0;
+}
+
+form {
+  display: inline;
+}
+
+
+.thumbnail{
+  padding: 0;
+}
+
+#thumbnail{
+    text-align: center;
+    border-radius: 4%;
+}
+
+.thumbnail #indexImg {
+    height: 230px;
+    width: 100%;
+  }
+
+.thumbnail #showImg {
+    height: 100%;
+    width: 100%;
+  }
+
+.thumbnail #showDescription {
+  text-align: left;
+  padding: 0;
+}
+
+.formInput {
+  width: 30%;
+  margin: 25px auto;
+}
+
+

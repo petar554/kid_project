@@ -1,0 +1,30 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+    <div class="row">
+        <h2>Create a New Campground</h2>
+        <div class="formInput">
+            <form action="/fireplaces" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="fireplace[image]" placeholder="image url">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="fireplace[description]" placeholder="description">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="number" name="fireplace[price]" placeholder="price" min="850.0"
+                        step="100.0">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="fireplace[author]" placeholder="author">
+                </div>
+                <div class=" form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+                <a href="/fireplaces">Back to fireplaces</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

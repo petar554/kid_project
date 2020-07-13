@@ -1,0 +1,22 @@
+<%- include("../partials/header") %>
+<div class="container">
+    <div class="row">
+        <h2>Add Comment</h2>
+        <div class="formInput">
+            <form action="/fireplaces/<%= fireplace._id %>/comments" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="comment[text]" placeholder="text">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="comment[author]" placeholder="author">
+                </div>
+                <div class="form-group">
+                    <button class=" btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+                <a href="/fireplaces">Go Back To Fireplaces</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

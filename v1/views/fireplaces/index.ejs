@@ -1,0 +1,40 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+
+    <header class="jumbotron">
+        <h1>Welcome</h1>
+        <p>
+            <a href="/fireplaces/new" class="btn btn-primary">Add your desired fireplace!</a>
+        </p>
+    </header>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>Desired fireplaces of our customers</h3>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <% fireplaces.forEach(function(fireplace){ %>
+        <div class="col-sm-6 col-md-4">
+            <div id="thumbnail" class="thumbnail">
+                <img id="indexImg" src="<%= fireplace.image %>">
+                <div class="caption">
+                    <% if(fireplace.description && fireplace.description.length > 0) { %>
+                    <h5><%- fireplace.description.substring(0, 45)%>...</h5>
+                    <h6><em><strong><%= fireplace.author %></strong></em></h6>
+                    <% } %>
+                </div>
+                <p>
+                    <a class="btn btn-warning" href="/fireplaces/<%= fireplace._id %>">View more</a>
+                </p>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+
+</div>
+
+<%- include("../partials/footer") %>

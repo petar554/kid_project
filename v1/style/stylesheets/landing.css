@@ -1,0 +1,110 @@
+body {
+    /* background: url(https://images.unsplash.com/photo-1522107177-01884fcfa2bb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80); */
+    background-size: cover;
+    background-position: center;
+    font-family: Lato;
+    color: rgb(218, 165, 32);
+    overflow: hidden;
+}
+
+#content{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: 15%;
+}
+
+#parent{
+    position: relative;
+}
+#child{
+    position: absolute;
+    right: 5px;
+    bottom: -450px;
+    z-index: 1;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 5em;
+    text-shadow: 1px 4px 4px black,
+        0px 8px 30px rgb(29, 27, 22);
+}
+
+h3 {
+    font-weight: bold;
+    text-shadow: 1px 1.5px 3px black,
+        0px 8px 30px rgb(29, 27, 22);
+}
+
+#btn {
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+
+.slideshow { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+  
+.slideshow li { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 50s linear infinite; 
+}
+  
+  
+.slideshow li:nth-child(1) { 
+    background-image: url(https://chesneys.co.uk/wp-content/uploads/2019/02/Fireplaces-e1552298260874.jpg) 
+  }
+  .slideshow li:nth-child(2) { 
+    background-image: url(https://www.stovax.com/wp-content/uploads/Reflex-75T-Edge-with-Black-Reeded-lining-Sandringham-limestone-mantel-matching-slip-set-MI.jpg);
+    animation-delay: 10s; 
+  }
+  .slideshow li:nth-child(3) { 
+    background-image: url(https://www.gratefireplace.co.uk/blog/wp-content/uploads/2012/04/sandringham-fireplace-640x360.jpg);
+    animation-delay: 20s; 
+  }
+  .slideshow li:nth-child(4) { 
+    background-image: url(https://artisanfireplaces.co.uk/wp-content/uploads/2016/08/Provence-textured-limestone-fireplace-2-1030x734.jpg);
+    animation-delay: 30s; 
+  }
+  .slideshow li:nth-child(5) { 
+    background-image: url(https://www.installaflame.co.uk/media/wysiwyg/slides/Firefox12.jpg);
+    animation-delay: 40s; 
+  }
+  
+  
+  @keyframes imageAnimation { 
+    0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+    }
+    10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+    }
+    20% {
+    opacity: 1
+    }
+    30% {
+    opacity: 0
+    }
+}
