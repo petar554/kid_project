@@ -14,7 +14,6 @@ router.get("/new", function (req, res) {
     });
 });
 
-
 // CREATE routes
 router.post("/", function (req, res) {
     Fireplace.findById(req.params.id, function (err, fireplace) {
@@ -36,6 +35,10 @@ router.post("/", function (req, res) {
         }
     });
 });
+
+// EDIT route 
+router.get
+
 
 
 

@@ -3,9 +3,6 @@ var express = require("express"),
     Fireplace = require("../models/fireplace")
 
 
-
-
-
 // INDEX route (show all fireplaces)
 router.get("/", function (req, res) {
     Fireplace.find({}).populate("comments").exec(function (err, allFireplaces) {
@@ -16,7 +13,6 @@ router.get("/", function (req, res) {
         }
     });
 });
-
 
 // CRETAE route 
 router.post("/", function (req, res) {
@@ -51,7 +47,6 @@ router.get("/new", function (req, res) {
     res.render("fireplaces/new")
 });
 
-
 // SHOW route
 router.get("/:id", function (req, res) {
     Fireplace.findById(req.params.id).populate("comments").exec(function (err, foundFireplace) {
@@ -73,7 +68,6 @@ router.get("/:id/edit", function (req, res) {
         }
     });
 });
-
 
 // UPDATE route 
 router.put("/:id", function (req, res) {
