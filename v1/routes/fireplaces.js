@@ -52,7 +52,6 @@ router.get("/new", function (req, res) {
 });
 
 
-
 // SHOW route
 router.get("/:id", function (req, res) {
     Fireplace.findById(req.params.id).populate("comments").exec(function (err, foundFireplace) {
