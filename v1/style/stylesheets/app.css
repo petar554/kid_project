@@ -24,8 +24,13 @@ padding: 0;
 }
 
 .jumbotron {
-    background-image: url(https://images.unsplash.com/photo-1521022969448-49639904ed7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
-    background-position: 50px 420px;
+  margin-bottom: 0px;
+  background-image: url(https://images.unsplash.com/photo-1521022969448-49639904ed7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
+  background-position: 0% 70%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.1em;
 }
 
 .jumbotron h1 {
