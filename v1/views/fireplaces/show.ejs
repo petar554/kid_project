@@ -35,6 +35,12 @@
                         <p>
                             <%= comment.text %>
                         </p>
+                        <a href="/fireplaces/<%= fireplace._id %>/comments/<%= comment._id %>/edit"
+                            class="btn btn-xs btn-warning">Edit</a>
+                        <form action="/fireplaces/<%= fireplace._id %>/comments/<%= comment._id %>?_method=DELETE"
+                            method="POST">
+                            <button class="btn btn-xs btn-danger">Delete</button>
+                        </form>
                     </div>
                 </div>
                 <%})%>
