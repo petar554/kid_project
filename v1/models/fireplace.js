@@ -6,7 +6,13 @@ var fireplaceSchema = new mongoose.Schema({
     image: String,
     description: String,
     price: String,
-    author: String,
+    author: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        username: String
+    },
     comments: [
         {
             type: mongoose.Schema.Types.ObjectId,
@@ -17,3 +23,4 @@ var fireplaceSchema = new mongoose.Schema({
 
 // model setup
 module.exports = mongoose.model("Fireplace", fireplaceSchema)
+
