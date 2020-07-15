@@ -49,7 +49,8 @@ padding: 0;
 .nav>li>a:focus, .nav>li>a:hover, div>a:focus, div>a:hover {
   text-decoration: none;
   background-color: transparent !important;
-  color: #ffcc00;
+  color: #e8a515;
+  text-shadow: 1px 1px #000;
 }
 
 a {
