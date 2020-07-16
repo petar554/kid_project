@@ -28,12 +28,30 @@ app.use(express.static(__dirname + "/style"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 
+// passport config
+// secret is going to be used to encode and decode information(datas) in sessions
+app.use(require("express-session")({
+    secret: "Project for PPOK",
+    resave: false,
+    saveUninitialized: false
+}));
+
+// tell express to use passport 
+app.use(passport.initialize());
+app.use(passport.session());
+
+// these two lines of code are responsible for reading the sessions, taking data form sessions that's encoded and decode it (deserializeUser), and than encoding it, serializing it back in sessions which is what serializeUser does
+passport.use(new localStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+/* middleware is some code that will be run before callback function */
 
 // Landing page
 app.get("/", function (req, res) {
     res.render("landing");
 });
-
 
 app.use("/fireplaces", fireplaceRoutes);
 app.use("/fireplaces/:id/comments", commentRoutes);
