@@ -11,7 +11,8 @@ var express = require("express"),
 
 
 var fireplaceRoutes = require("./routes/fireplaces"),
-    commentRoutes = require("./routes/comments")
+    commentRoutes = require("./routes/comments"),
+    userRoutes = require("./routes/user")
 
 // mongoose config
 // mongoose is an Object Data Modeling (ODM) library for MongoDB and Node. js. It manages relationships between data, provides schema validation, and is used to translate between objects in code and the representation of those objects in MongoDB.
@@ -55,6 +56,7 @@ app.get("/", function (req, res) {
 
 app.use("/fireplaces", fireplaceRoutes);
 app.use("/fireplaces/:id/comments", commentRoutes);
+app.use("/", userRoutes);
 
 app.listen(process.env.PORT || 3000, function () {
     console.log("The KiD project has started.")
