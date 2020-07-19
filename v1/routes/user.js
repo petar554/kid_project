@@ -8,7 +8,6 @@ router.get("/register", function (req, res) {
     res.render("register");
 });
 
-
 // handling sign up logic
 router.post("/register", function (req, res) {
     var newUser = new User({ username: req.body.username });
@@ -23,16 +22,22 @@ router.post("/register", function (req, res) {
     });
 });
 
+// show login form
+router.get("/login", function (req, res) {
+    res.render("login");
+});
 
+// handling login logic
+router.post("/login", passport.authenticate("local", {
+    successRedirect: "/fireplaces",
+    failureRedirect: "/login"
+}), function (req, res) {
+});
 
-
-
-
-
-
-
-
-
+router.get("/logout", function (req, res) {
+    req.logOut();
+    res.redirect("/fireplaces");
+});
 
 module.exports = router;
 
