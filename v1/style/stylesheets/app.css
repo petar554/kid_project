@@ -47,7 +47,7 @@ padding: 0;
   margin: 25px auto;
 }
 
-.nav>li>a:focus, .nav>li>a:hover, div>a:focus, div>a:hover {
+.nav>li>a:focus, .nav>li>a:hover, .navbar-header>a:focus, .navbar-header>a:hover {
   text-decoration: none;
   background-color: transparent !important;
   color: #e8a515;
