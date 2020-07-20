@@ -1,6 +1,7 @@
 var express = require("express"),
     router = express.Router({ mergeParams: true }),
-    Fireplace = require("../models/fireplace")
+    Fireplace = require("../models/fireplace"),
+    middleware = require("../middleware")
 
 
 // INDEX route (show all fireplaces)
@@ -15,7 +16,7 @@ router.get("/", function (req, res) {
 });
 
 // CRETAE route 
-router.post("/", function (req, res) {
+router.post("/", middleware.isLoggedIn, function (req, res) {
     /* var name = req.body.name;
     var image = req.body.image;
     var description = req.body.description;
@@ -43,7 +44,7 @@ router.post("/", function (req, res) {
 });
 
 // NEW route
-router.get("/new", function (req, res) {
+router.get("/new", middleware.isLoggedIn, function (req, res) {
     res.render("fireplaces/new")
 });
 
