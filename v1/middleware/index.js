@@ -10,4 +10,22 @@ middlewareObj.isLoggedIn = function (req, res, next) {
     res.redirect("/login");
 }
 
+middlewareObj.checkFireplaceOwnership = function (req, res, next) {
+    if (req.isAuthenticated()) {
+        Fireplace.findById(req.params.id, function (req, foundedFireplace) {
+            if (err) {
+                res.redirect("back");
+            } else {
+                if (foundedFireplace.id.equals(req.user._id)) {
+                    next();
+                } else {
+                    res.redirect("back");
+                }
+            }
+        });
+    } else {
+        res.redirect("back");
+    }
+}
+
 module.exports = middlewareObj;

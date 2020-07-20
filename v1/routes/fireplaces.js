@@ -58,7 +58,7 @@ router.get("/:id", function (req, res) {
 });
 
 // EDIT route
-router.get("/:id/edit", function (req, res) {
+router.get("/:id/edit", middleware.checkFireplaceOwnership, function (req, res) {
     Fireplace.findById(req.params.id, function (err, editFireplace) {
         if (err) {
             res.redirect("/fireplaces");
@@ -69,7 +69,7 @@ router.get("/:id/edit", function (req, res) {
 });
 
 // UPDATE route 
-router.put("/:id", function (req, res) {
+router.put("/:id", middleware.checkFireplaceOwnership, function (req, res) {
     Fireplace.findByIdAndUpdate(req.params.id, req.body.fireplace, function (err, updatedFireplace) {
         if (err) {
             res.redirect("/fireplaces");
@@ -80,7 +80,7 @@ router.put("/:id", function (req, res) {
 });
 
 // DELETE route
-router.delete("/:id", function (req, res) {
+router.delete("/:id", middleware.checkFireplaceOwnership, function (req, res) {
     Fireplace.findByIdAndRemove(req.params.id, function (err, removedFireplace) {
         if (err) {
             res.redirect("/fireplaces");
