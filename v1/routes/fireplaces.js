@@ -17,24 +17,22 @@ router.get("/", function (req, res) {
 
 // CRETAE route 
 router.post("/", middleware.isLoggedIn, function (req, res) {
-    /* var name = req.body.name;
-    var image = req.body.image;
-    var description = req.body.description;
-    var price = req.body.price;
-    var author = {
-        id: req.user._id,
-        username: req.user.username
-    }
+    var img = req.body.image,
+        desc = req.body.description,
+        price = req.body.price,
+        author = {
+            id: req.user._id,
+            username: req.user.username
+        }
 
     var newFireplace = {
-        name: name,
-        image: image,
-        description: description,
+        image: img,
+        description: desc,
         price: price,
         author: author
-    } */
+    }
 
-    Fireplace.create(req.body.fireplace, function (err, newlyFireplace) {
+    Fireplace.create(newFireplace, function (err, newlyFireplace) {
         if (err) {
             console.log(err);
         } else {

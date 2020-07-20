@@ -25,7 +25,10 @@ router.post("/", function (req, res) {
                 if (err) {
                     console.log(err);
                 } else {
-                    console.log(comment);
+                    /* console.log(comment); */
+                    comment.author.id = req.user._id;
+                    comment.author.username = req.user.username;
+
                     comment.save();
                     fireplace.comments.push(comment);
                     fireplace.save();
@@ -68,9 +71,5 @@ router.delete("/:comment_id", function (req, res) {
         }
     });
 });
-
-
-
-
 
 module.exports = router;
