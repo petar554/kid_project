@@ -46,8 +46,10 @@ passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
-/* middleware is some code that will be run before callback function */
+app.use(function (req, res, next) {
+    res.locals.currentUser = req.user;
+    next();
+});
 
 // Landing page
 app.get("/", function (req, res) {
