@@ -89,9 +89,8 @@ h3 {
   .slideshow li:nth-child(5) { 
     background-image: url(https://www.installaflame.co.uk/media/wysiwyg/slides/Firefox12.jpg);
     animation-delay: 40s; 
-  }
-  
-  
+  } 
+
   @keyframes imageAnimation { 
     0% { 
     opacity: 0; 
@@ -107,4 +106,14 @@ h3 {
     30% {
     opacity: 0
     }
+}
+
+@media (max-width: 400px) {
+  .button {
+    display:block;  
+    float:none;
+    text-align: center;
+    margin: 5px auto;
+    width: 200px;
+  }
 }
