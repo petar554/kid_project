@@ -12,11 +12,29 @@ middlewareObj.isLoggedIn = function (req, res, next) {
 
 middlewareObj.checkFireplaceOwnership = function (req, res, next) {
     if (req.isAuthenticated()) {
-        Fireplace.findById(req.params.id, function (req, foundedFireplace) {
+        Fireplace.findById(req.params.id, function (err, foundedFireplace) {
             if (err) {
                 res.redirect("back");
             } else {
-                if (foundedFireplace.id.equals(req.user._id)) {
+                if (foundedFireplace.author.id.equals(req.user._id)) {
+                    next();
+                } else {
+                    res.redirect("back");
+                }
+            }
+        });
+    } else {
+        res.redirect("back");
+    }
+}
+
+middlewareObj.checkCommentOwnership = function (req, res, next) {
+    if (req.isAuthenticated()) {
+        Comment.findById(req.params.comment_id, function (err, foundedComment) {
+            if (err) {
+                res.redirect("back");
+            } else {
+                if (foundedComment.author.id.equals(req.user._id)) {
                     next();
                 } else {
                     res.redirect("back");
