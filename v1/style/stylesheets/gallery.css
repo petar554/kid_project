@@ -1,0 +1,32 @@
+body {
+    background: url('../pictures/photo-1541580104-94e138c83ca9.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+ img {
+    width: 350px;
+    height: 400px;
+    margin-bottom: 30px;
+    transition: 1s;
+    /* filter: grayscale(100%); */
+ }
+ img:hover {
+    /* filter: grayscale(0); */
+    transform: scale(1.1);
+ }
+  
+ p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 35px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 30px;
+ }
+  
+ hr{
+    margin-top: 0;
+    width: 25%;
+    border-top: 1px solid #000;
+ }
+ 
