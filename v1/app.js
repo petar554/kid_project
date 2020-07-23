@@ -2,6 +2,7 @@ var express = require("express"),
     app = express(),
     bodyParser = require("body-parser"), //initialize express
     mongoose = require("mongoose"),
+    flesh = require("connect-flash"),
     passport = require("passport"),
     localStrategy = require("passport-local"),
     methodOverride = require("method-override"),
@@ -28,6 +29,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(__dirname + "/style"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
+app.use(flesh());
 
 // passport config
 // secret is going to be used to encode and decode information(datas) in sessions
