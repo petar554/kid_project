@@ -17,6 +17,7 @@ router.post("/register", function (req, res) {
             return res.redirect("/register");
         }
         passport.authenticate("local")(req, res, function () {
+            req.flash("success", "Wellcome to KiD Gallery " + user.username);
             res.redirect("fireplaces");
         });
     });
@@ -24,7 +25,7 @@ router.post("/register", function (req, res) {
 
 // show login form
 router.get("/login", function (req, res) {
-    res.render("login");
+    res.render("login", { message: req.flash("error") });
 });
 
 // handling login logic
@@ -34,8 +35,10 @@ router.post("/login", passport.authenticate("local", {
 }), function (req, res) {
 });
 
+// logout
 router.get("/logout", function (req, res) {
     req.logOut();
+    req.flash("success", "Logged You Out")
     res.redirect("/fireplaces");
 });
 
