@@ -19,19 +19,12 @@ var fireplaceRoutes = require("./routes/fireplaces"),
 // mongoose config
 // mongoose is an Object Data Modeling (ODM) library for MongoDB and Node. js. It manages relationships between data, provides schema validation, and is used to translate between objects in code and the representation of those objects in MongoDB.
 console.log(process.env.DATABASEURL);
+const url = process.env.DATABASEURL || 'mongodb://localhost/kid_v1'
+
 mongoose.set("useUnifiedTopology", true);
-mongoose.connect(process.env.DATABASEURL, {
+mongoose.connect(url, {
     useNewUrlParser: true
 });
-
-/* mongoose.connect("mongodb+srv://petar:penibovl4@cluster0.atgfp.mongodb.net/kidGallery?retryWrites=true&w=majority", {
-    useNewUrlParser: true,
-    useCreateIndex: true
-}).then(() => {
-    console.log("Conected to DB")
-}).catch(err => {
-    console.log("ERROR: ", err.message);
-}); */
 
 // app config
 app.use(bodyParser.urlencoded({
